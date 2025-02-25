@@ -7,6 +7,13 @@
 # is some case where some problem will be made worse.
 # USE AT YOUR OWN RISK.
 
+if [[ $0 == "$BASH_SOURCE" ]]
+then
+    echo "stringent.sh needs to be sourced rather than directly executed, example:"
+    echo "source ./stringent.sh || exit 1"
+    exit 1
+fi
+
 set -o errexit	# errexit first
 set -o noclobber
 set -o nounset
